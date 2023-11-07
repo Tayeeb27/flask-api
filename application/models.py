@@ -1,13 +1,15 @@
 from application import db, app
 app.app_context().push()
-class FriendsCharacter(db.Model):
+class FriendsCharacters(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50), nullable=False)
+    imageURL = db.Column(db.String(200), nullable=False)
     age = db.Column(db.Integer, nullable=False)
     catch_phrase = db.Column(db.String(200), nullable=False)
     
-    def __init__(self, name, age, catch_phrase):
+    def __init__(self, name, imageURL, age, catch_phrase):
         self.name = name
+        self.imageURL = imageURL
         self.age = age
         self.catch_phrase = catch_phrase
 
